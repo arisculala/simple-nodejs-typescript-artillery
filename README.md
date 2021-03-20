@@ -1,5 +1,5 @@
 # Simple Nodejs Typescript with Artillery for API Load Testing
-This is a simple boiletplate for nodejs typescript
+This is a simple boiletplate for nodejs, typescript and artillery for api load testing
 - Make sure you have installed nodejs in your machine (https://nodejs.org/en/download/package-manager/)
 
 ## You can simple download the sourcecode and run in your local
