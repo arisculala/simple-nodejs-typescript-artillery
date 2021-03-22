@@ -1,0 +1,24 @@
+{
+    "config": {
+      "target": "http://localhost:8010",
+      "phases": [
+        {
+          "name": "Starting API's load testing . . . . [100rps for 30s]",
+          "duration": 30,
+          "arrivalRate": 100
+        }
+      ]
+    },
+    "scenarios": [
+      {
+        "name": "Load Test GET: / endpoint",
+        "flow": [
+          {
+            "get": {
+              "url": "/"
+            }
+          }
+        ]
+      }
+    ]
+  }
