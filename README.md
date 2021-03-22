@@ -232,6 +232,7 @@ $(npm bin)/artillery dino
 ```
 
 - Create and configure `artillery.json`
+Reference: https://artillery.io/docs/guides/getting-started/core-concepts.html
 ```
 {
     "config": {
@@ -258,3 +259,27 @@ $(npm bin)/artillery dino
     ]
   }
   ```
+  
+  - Attach running artillery in `test` in `package.json` scripts
+  ```
+  "scripts": {
+  .......
+  "test:load": "artillery run artillery.json",
+  .......
+  }
+  ```
+  
+  - Run the application
+  ```
+  npm start
+  ```
+  
+  - Open new terminal window and browse the project directory and run below command to load the application using 100rps for 30s
+  ```
+  npm run test:load
+  ```
+  
+  - You will be able to see the stats of your load testing
+
+
+  
