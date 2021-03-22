@@ -193,5 +193,68 @@ app.listen(port, () => console.log(`Server is listening on port ${port}! Running
 - Notice that `nodemon` automatically restarted your application
 
 
+## Install Artillery
+https://artillery.io/docs/guides/overview/why-artillery.html
 
+- Install artillery as a dev dependency of the project using npm
+```
+npm install -D artillery@1.6
+```
 
+- Check if artillery is installed in the project (run below command from the root folder)
+```
+$(npm bin)/artillery dino
+```
+```
+------------
+< Artillery! >
+ ------------
+          \
+           \
+                         .@
+                        @.+
+                       @,
+                      @'
+                     @'
+                    @;
+                  `@;
+                 @+;
+              .@#;'
+         #@###@;'.
+       :#@@@@@;.
+      @@@+;'@@:
+    `@@@';;;@@
+   @;:@@;;;;+#
+`@;`  ,@@,, @@`
+      @`@   @`+
+      @ ,   @ @
+      @ @   @ @
+```
+
+- Create and configure `artillery.json`
+```
+{
+    "config": {
+      "target": "http://localhost:8010",
+      "phases": [
+        {
+          "name": "Starting API's load testing . . . . [100rps for 30s]",
+          "duration": 30,
+          "arrivalRate": 100
+        }
+      ]
+    },
+    "scenarios": [
+      {
+        "name": "Load Test GET: / endpoint",
+        "flow": [
+          {
+            "get": {
+              "url": "/"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  ```
